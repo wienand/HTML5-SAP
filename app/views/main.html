@@ -1,0 +1,35 @@
+<!-- Home -->
+<div qr-code-scanner="readQRCode"></div>
+
+<div class="alert" ng-repeat="alert in alerts" type="alert.type" close="state.closeAlert($index)">{{alert.msg}}</div>
+
+<div style="margin-top:7px;">
+  <button class="btn" type="button" style="width:45%;margin-left:10px;" ng-click="materialDocumentPositions = {}">Cancel</button>
+  <button class="btn btn-primary pull-right" type="button" style="width:45%;margin-right:10px;" ng-click="transferToSAP()">Confirm</button>
+</div>
+<div class="badge" style="font-size: 100%;width:100%;vertical-align: middle; margin-top:5px;"
+     ng-repeat="(thingNo, thing) in materialDocumentPositions">
+  <div style="vertical-align: middle;text-align: center; line-height: 30px;">{{thingNo}}: {{thing.description}}</div>
+  <div style="vertical-align: middle;text-align: center;line-height: 30px;color: darkblue;margin-right: 10px;">
+    <a class="badge badge-warning pull-left"
+       style="width:30px;text-align:center; vertical-align: text-top;line-height: 30px;font-weight: bold;font-size: 150%;"
+       ng-click="decreaseMaterial(thingNo)">-</a>
+    <a class="badge badge-warning pull-right"
+       style="width:30px;text-align:center; vertical-align: middle;line-height: 30px;font-weight: bold;font-size: 150%;"
+       ng-click="thing.quantity = thing.quantity + 1">+</a>
+    {{thing.quantity}}
+  </div>
+</div>
+
+<form class="form-inline" ng-show="_.isEmpty(materials)" style="text-align: center;">
+  <input type="text" class="input-small" ng-model="username" placeholder="ERI user name">
+  <input type="password" class="input-small" ng-model="password" placeholder="ERI password">
+  <button class="btn" ng-click="loadMaterials()">Load materials</button>
+</form>
+
+<form class="form-inline" ng-hide="_.isEmpty(materials)" style="text-align: center;">
+  <select style="width:75%" ng-model="manualCode">
+    <option value="{{materialNo}}" ng-repeat="(materialNo, material) in materials">{{materialNo}}: {{material.description}}</option>
+  </select>
+  <button class="btn" ng-click="readQRCode(manualCode)">Manual add</button>
+</form>

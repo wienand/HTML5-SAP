@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>HTML5@SAP: Goods receipt</title>
+  <meta name="description" content="Showcase booking receipt of goods" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/bootstrap/css/bootstrap-responsive.css" />
+
+</head>
+
+<body ng-app="HTML5SAP">
+  <div class="container" ng-view></div>
+
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/grid.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/version.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/detector.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/formatinf.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/errorlevel.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/bitmat.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/datablock.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/bmparser.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/datamask.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/rsdecoder.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/gf256poly.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/gf256.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/decoder.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/QRcode.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/findpat.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/alignpat.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jsqrcode/databr.js"></script>
+
+  <script src="scripts/vendor/underscore-min.js"></script>
+
+  <script src="scripts/vendor/angular/angular.js"></script>
+  <script src="scripts/vendor/angular/angular-resource.js"></script>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/angular-qr-code.js"></script>
+</body>
+</html>
